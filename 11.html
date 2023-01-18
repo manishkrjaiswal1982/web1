@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>   
+    .para, div {   
+        margin: 10px;   
+        padding: 5px;   
+        border: 2px solid blue;   
+    } 
+	#myDiv1, #myDiv2 {
+	  background-color: coral;
+	  padding: 50px;
+	}
+	
+	
+#myP1, #myP2 {
+	  background-color: white; 
+	  font-size: 20px;
+	  border: 1px solid;
+	  padding: 20px;
+	}
+	
+	#imgZombie {position:relative;}
+	#animate_zombie {
+		position:relative;
+		display:block;
+	}
+</style>   
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+<script>
+
+
+//const divA = document.createElement("div")
+//divA.innerHTML = "Div created through JS"
+//bodyC.append("Text added through body")
+/*
+$("#id-checkbox1").on("change", function(event){
+	console.log("cllicked")
+	document.getElementById("output-box").innerHTML += "Sorry! <code>preventDefault()</code> won't let you check this!<br>";
+	event.preventDefault();
+});														
+*/														
+
+//javascript wait for document load
+document.addEventListener("DOMContentLoaded", function(event) { 
+  console.log("Document Loaded through JS \n ")
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	 console.log("Mobile device detected....................\n")
+	}
+});
+
+
+
+	
+
+/* 
+//Event Bubbling = false or Event Capturing = true
+//The default value is false, which will use the bubbling propagation, when the value is set to true, the event uses the capturing propagation
+
+document.getElementById('myP2').addEventListener("click", function() {
+  alert("You clicked the white element!");
+}, true);
+
+document.getElementById('myDiv2').addEventListener("click", function() {
+  alert("You clicked the orange element!");
+}, true);
+*/
+
+//jQuery.noConflict(); // If we use other library and that library also use '$' as syntax, so we need to make non-conflit other languages vs jQuery
+//$.noConflict()
+//jQuery(document).ready(function($) {
+
+$(document).ready(function() {
+//Moving all div with same pattern class name inside a container ------Start---------
+	$newDiv = $("<div/>").attr("id", "Container_bottom")  
+	$newDiv.insertAfter(".para1");
+
+	$('.myDiv2').each(function(i, obj) {
+		$(this).prependTo("#Container_bottom")
+	});
+//------End---------
+
+//Add dynamic HTML element through Jquery
+$newDiv_2 = $("<div/>").attr("id", "div_2")
+$newDiv_2.innerHTML= "Creatd through JQuery"
+$newDiv_2.insertAfter(".myDiv2")
+document.getElementById("div_2").innerHTML = "Set Content text from Javascript <code><b><span style='font-size:20px'> textContent</span></b> feature</code>"
+// End
+	
+//innerText vs textContent in JS
+	console.log(document.getElementsByClassName("class1")[0].innerText)
+	console.log(document.getElementsByClassName("class1")[0].textContent)	
+// End
+
+//Remove attribute through JS
+const id1 = document.querySelector(".class1")
+id1.removeAttribute("title")
+//End
+
+//Remove or Add class through toggle 
+id1.classList.toggle("class3", true) // true=add class || false=don't add class
+//End
+	
+	
+//Custom attribut
+	console.log("First Name=" + id1.dataset.firstName + "\nLast Name=" + id1.dataset.surname)
+	id1.dataset.nickName="Mr. India"
+	id1.dataset.nickname="Mr. Dependent"
+//
+
+// typeof keyword
+	console.log(typeof fnscrolltoTop)
+	console.log(typeof $newDiv)
+	console.log(typeof id1)
+	
+//	
+//document.write("Written through JS")
+ //Add Back functionality
+	$("#button1").click(function(event) {
+	//$("button").click(function(event) {
+	$("#p1").nextAll().addBack().css( "background-color", "yellow" );
+	
+	//Add Back functionality
+	//var parentOffset = $(this)
+	var relX = event.pageX
+	var relY = event.pageY
+	//console.log("parentOffset" + parentOffset + "\n")
+	console.log("relX" + event.pageX + "\n")
+	console.log("relY" + event.pageY + "\n")
+	});
+	
+	$(".myP2").on("click",function (e){
+		e.stopPropagation()
+		console.log("myP2 is click through jquery................................................")
+		
+	});
+	
+	$(".myDiv2").on("click",function (e){
+		console.log("myDiv2 is click through jquery................................................")
+	});
+	
+	
+	$(".adjustPageHeight").click(function(){
+		$("#pageDIV").animate({height: '+=200'}, 500);
+		console.log($("#pageDIV").height());
+	});
+		
+	$(window).scroll(function(event){
+		console.log("window is scrolling: \n")
+	});
+	
+	$(window).resize(function(event){
+		console.log("window width size is: " + $(window).width())
+	});
+
+	/*document.getElementById('foobar').addEventListener('keyup', function(e) {
+		console.log("mouseover event triggered")
+		});*/
+		
+	$("#button1").mousemove(function(event){
+		console.log("mousemove event triggered")
+		console.log("Window Width: " +$(window).width())
+	});
+	
+	
+	$("#scrollableDiv").on('wheel', function(event) {
+		setTimeout(function() {
+			console.log("Wheel event triggered")
+			window.location.reload(1); //reload page after 1 second
+			}, 1000);
+	});
+	
+	//Sequence of Key Press -> Key down | Key Pressed | Key up
+	$("#empName").keypress(function (event) { console.log("Key Pressed event >>");});
+	$("#empName").on('keydown',function (event) { console.log("Key Down event >>")});
+	$("#empName").on("keyup",function event() { console.log("Key Up event >>")});
+	//End
+	
+	//Animate Zombie
+	$("#animate_zombie").on("click",function(event){
+		
+		$("#imgZombie").animate(
+			{left: '+=200'}, 500);
+		});
+						   
+	
+	
+});  
+
+
+function fnscrolltoTop(){
+ 	$("html, body").animate({
+    scrollTop: 0
+  }, 2000)
+};	
+
+window.onload = function() {
+	console.log("hello");
+	
+	
+	console.log("Document Width through Get the document's window object:" +document.defaultView.innerWidth)
+	console.log(document.querySelector(".para").innerHTML + "Captured through JS Query Selector")
+	
+	
+	if (document.getElementById("button1")===document.activeElement) { console.log("Button has focus at the time through JS: \n") }
+	setInterval(function(){
+		//window.location.reload(1); //reload page after each second
+	},2000);
+	}
+</script>   
+
+</head>
+
+<body>
+<div id="pageDIV">
+	<h2> Manish - It is an example of using the addBack() method. <span style="color:red;font-size:20px;">Adds the previous set of elements to the current set.</span></h2>  
+	<div> 
+		<p id = "p1" class = "para1"> Paragraph 1 </p>   
+		<p class = "para"> Paragraph 2 </p>   
+		<p class = "para"> Paragraph 3 </p>   
+	</div>   
+	<p id="foobar"> Click the below button to see the effect. </p><br>  
+	<button id="button1"> ADD Back </button> 
+	<div id="scrollableDiv" style="width:300px;height:600px;border:1px solid #000;">This is a div. Use mouse wheel event here.</div>
+	 <p class="scrolltoTop"><a href="#" onclick="fnscrolltoTop()">Scroll to Top</a></p>
+	<p>Please click on the checkbox control.</p>
+
+	<form>
+	  <label for="id-checkbox">Checkbox:</label>
+	  <input type="checkbox" id="id-checkbox1"/>
+	<input type="text" id="empName">  
+  </form>
+
+	<div id="output-box"></div>
+	
+	<button class="adjustPageHeight">Increase page height</button>
+	
+	<div class="myDiv2">
+		<h2>Capturing:</h2>
+ 		<p class="myP2">Click me!</p>
+	</div>
+	
+	<div class="class1" title="Class1_Title" data-first-name="Manish" data-surname="Jaiswal">
+		<span>class1 - span 1</span>
+		<span style="display:none;">class1 - span 2</span>
+	</div>
+	<img>
+<!---->
+	
+</div>
+<img id="imgZombie" src="images/zombie.jpg" width="200" height="200" alt=""/>
+<button id="animate_zombie">Animate Zombie</button>
+</body>
+</html>
