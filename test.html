@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<!--
+<script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.3/bowser.min.js"></script>
+<script type="text/javascript">
+
+/*
+function MM_openBrWindow(theURL,winName,features) { 
+if(Number(jscd.browserVersion)<9){
+//v2.0
+  myWin = window.open(theURL,winName,features);
+	document.getElementById('result').innerHTML = "Pleaes do not close this window"
+	document.getElementById('button').style.visibility = "hidden"
+	}else{
+	window.location = "index.html"
+	}
+}
+*/
+console.log(bowser);
+document.write("You are using " + bowser.name +
+               " v" + bowser.version + 
+               " on " + bowser.osname);
+</script>
+
+<!--<body onLoad="MM_openBrWindow('a001index.html','CRS','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=1024,height=768'), closethis(); ">-->
+<table border="0" width="100%"><tr><td align="center">
+<br>
+<input type="button" name="button" id="button" value="Launch Course" onClick="MM_openBrWindow('a001index.html','CRS','toolbar=no,location=yes,status=no,menubar=no,scrollbars=no,resizable=no,width=980,height=645')">
+</td></tr></table>
+
+<div id="popup" align="center"></div>
+
+</body>
+</html>
