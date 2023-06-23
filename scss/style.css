@@ -1,0 +1,6 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: end !important;
+  justify-content: end !important;
+}/*# sourceMappingURL=style.css.map */
