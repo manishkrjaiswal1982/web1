@@ -45,4 +45,11 @@
   min-height: 210px !important;
   background-color: chocolate;
   margin-top: -20px;
+}
+
+.div-sticky-class {
+  color: red;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
 }/*# sourceMappingURL=style.css.map */
