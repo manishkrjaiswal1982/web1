@@ -68,4 +68,12 @@
   z-index: 9999;
   background: url("../img/pageLoader.gif") 50% 50% no-repeat rgb(249, 249, 249);
   opacity: 0.8;
+}
+
+#myCounter {
+  font-size: 24px;
+}
+
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
+  background-color: #000 !important;
 }/*# sourceMappingURL=style.css.map */
