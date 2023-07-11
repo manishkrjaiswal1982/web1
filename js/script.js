@@ -6,7 +6,7 @@ $(document).ready(function() {
     });
 
     $(window).on("scroll", function(){
-    console.log("scrolled....");
+    // console.log("scrolled....");
     if (window.scrollY > 50) {
         $("#menuBar").addClass("fixed-top"); // add padding top to show content behind navbar    
         } else {

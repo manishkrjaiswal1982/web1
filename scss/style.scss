@@ -47,6 +47,10 @@
     margin-top: -20px;     
 }
 
+.JsPortfolio > .clsPortfolio {
+    background-color:#FFF !important; 
+}
+
 .div-sticky-class {
     color: red;
     position: sticky;
@@ -76,5 +80,20 @@
 
 .navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active{
     background-color: #000 !important;
+}
+.product {
+    width: 200px;
+    height: 300px;
+    border: 2px salmon solid;
+    padding: 8px;
+    margin: 8px;
+    cursor: pointer;
+}
+
+.product:hover {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(250,130,114,1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(250,130,114,1);
+    box-shadow: 10px 10px 5px 0px rgba(250,130,114,1);
+
 }
 

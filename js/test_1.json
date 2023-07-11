@@ -1,0 +1,55 @@
+[
+        {
+          "id": 1,
+          "title": "Vivo",
+          "body": "Description 1",
+          "src": "brand6",
+          "price": 20000
+        },
+        {
+          "id": 2,
+          "title": "Samsung",
+          "body": "Description 2",
+          "src": "brand2",
+          "price": 26000
+        },
+        {
+         "id": 3,
+          "title": "Realme",
+          "body": "Description 3",
+          "src": "brand3",
+          "price": 18000
+        },
+        {
+          "id": 4,
+          "title": "Redmi",
+          "body": "Description 4",
+          "src": "brand4",
+          "price": 17000
+        },
+        {
+          "id": 5,
+          "title": "iball",
+          "body": "Description 5",
+          "src": "brand5",
+          "price": 12000
+        },
+
+        {
+          "id": 6,
+          "title": "Micromax",
+          "body": "Description 6",
+          "src": "brand6",
+          "price": 11000
+        },
+
+        {
+          "id": 6,
+          "title": "Spice",
+          "body": "Description 7",
+          "src": "brand1",
+          "price": 10000
+        }
+        
+        
+      ]

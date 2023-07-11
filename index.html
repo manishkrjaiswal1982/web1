@@ -10,6 +10,10 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> -->
     <link href="/scss/style.css" type="text/css" rel="stylesheet">
     <script src = "/js/script.js"> </script>
+    <script src = "/js/portfolio.js" defer> </script>
+    <script src = "/js/fetchLocalJSON.js" defer> </script>
+    <script src = "/js/addtocart.js" defer> </script>
+    
     
     <link rel="stylesheet" href = "/lib/css/animate.css"> </script>
     <link rel="stylesheet" href="lib/css/templatemo-woox-travel.css">
@@ -35,9 +39,11 @@
     $(window).load(function() {
         $(".loader").fadeOut("slow");
     });
+
+    
     </script>
 </head>
-<body data-spy="scroll" data-target="#nav1" data-offset="50">
+<body data-spy="scroll" data-target="#nav1" data-offset="50" onload="printData();fetchLocalJSONJS();fetchLocalJSONJquery();">
 <div class="loader"></div>
 <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
     <div class="spinner-grow text-primary" style="width: 5rem; height: 5rem;" role="status">
@@ -129,7 +135,7 @@
     <div style="font-size:24px;" id="aboutus">
       A Front-end web developer’s job is to create websites. While their primary role is to ensure the website is visually appealing and easy to navigate, many web developers are also responsible for the website’s performance and capacity.
       <br><br>
-      
+          
         <span><kbd>Roles and Responsiblity</kbd></span><br>
       <ol>
       <li>Designing user interfaces and navigation menus</li>
@@ -288,6 +294,16 @@
         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
           <img src="img/client-3.png" class="img-fluid" alt="">
         </div>
+        <div class="JsPortfolio" id="JsPortfolio">
+          <div class="row" id="display-data"></div>
+        </div> 
+        
+        <div class="JsPortfolio" id="JsPortfolio">
+          <div class="row" ></div>
+          <div class="row" id="data-output2" data-jsscroll data-jsscroll-slide-right data-jsscroll-delay="1.5" data-jsscroll-threshold="1.25" ></div>
+          <div class="btn btn-info" onclick="goToCart();">View Cart</div>
+        </div>
+      
 
       </div>
     
@@ -307,6 +323,8 @@
 new WOW().init();
 new jsScrollAnimations().init();
 new AOS.init();
+
+
 
 function bannerSwitcher() {
       next = $('.sec-1-input').filter(':checked').next('.sec-1-input');
@@ -356,5 +374,11 @@ function bannerSwitcher() {
 
     // Start the counter animation
     animateCounter();
+
+    // $(document).ready(function(){
+
+
+
+// })
 </script>
 </html>

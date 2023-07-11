@@ -1,0 +1,19 @@
+.productList{
+    
+    position: relative;
+    height: auto;
+    width: 800px !important;
+    
+    /* border: 2px #ff0000 solid; */
+}
+
+.container-fluid{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.row{
+    border: 1px #ff0000 solid !important;
+}
